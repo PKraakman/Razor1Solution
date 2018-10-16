@@ -33,6 +33,7 @@
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/About">About</a></li>
                     <li><a asp-page="/Contact">Contact</a></li>
+                    <li><a asp-area="beers" asp-page="show" asp-route-make="heineken" asp-route-gallons="13">Beers</a></li>
                 </ul>
             </div>
         </div>
@@ -41,6 +42,7 @@
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
+
         @RenderBody()
         <hr />
         <footer>
