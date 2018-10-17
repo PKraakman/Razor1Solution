@@ -31,6 +31,12 @@ namespace Razor1
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            
+            
+           // services.AddDbContext<ASP1>(options =>
+           //     options.UseSqlServer(Configuration.GetConnectionString("ASP1")));
+                
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
