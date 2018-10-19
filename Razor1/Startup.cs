@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Razor1.Repository;
+
+
 
 namespace Razor1
 {
@@ -31,13 +34,13 @@ namespace Razor1
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            
-            
-           // services.AddDbContext<ASP1>(options =>
-           //     options.UseSqlServer(Configuration.GetConnectionString("ASP1")));
-                
-            
 
+            // Following does not work because we are not using Entitiy Framework
+            // services.AddDbContext<IASP1Repository>(options =>
+            //     options.UseSqlServer(Configuration.GetConnectionString("ASP1")));
+
+            services.AddTransient<IBeerRepository, BeerRepository>();
+           
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

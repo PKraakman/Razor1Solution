@@ -1,8 +1,16 @@
 ﻿@page
-@model Razor1.Areas.Beers.Pages.ShowModel
+@using System
+@model  Razor1.Areas.Beers.Pages.ShowModel
 @{
     ViewData["Title"] = "show in Beers";
 }
 
-<h2> All beers to show in show from Beers</h2>
+<h2> All beers to show in show from Beers Area</h2>
+
+<h3>@Model.Message</h3>
+
+@foreach (var beer in Model.beers)
+{
+    <strong>@beer.Name</strong><br />
+}
 
